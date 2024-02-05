@@ -1,6 +1,6 @@
 // src/components/Menu.js
 import React, { useContext } from 'react';
-import SelectedItemContext from '../pages/Home/selectedItemContext';
+import { SelectedItemContext } from '../pages/Home/selectedItemContext';
 import { stylize } from '../utils/stylize';
 
 const Menu = ({ menuItems }) => {
@@ -15,15 +15,16 @@ const Menu = ({ menuItems }) => {
 
 export default Menu;
 
-const MenuItem = ({ item }) => {
+export const MenuItem = ({ item }) => {
   const { selectedItems, setSelectedItems } = useContext(SelectedItemContext);
-  const selected = selectedItems.includes(item.name);
+  const selected = (selectedItems.filter((x) => x.name === item.name).length != 0);
 
   const handleClick = (e) => {
-    if (selectedItems.includes(item.name)) {
-      setSelectedItems(selectedItems.filter((e) => e !== item.name));
+    const sel = selectedItems.filter((x) => x.name === item.name);
+    if (sel.length != 0) {
+      setSelectedItems(selectedItems.filter((x) => x.name !== item.name))
     } else {
-      setSelectedItems([...selectedItems, item.name])
+      setSelectedItems([...selectedItems, item])
     }
   }
 
