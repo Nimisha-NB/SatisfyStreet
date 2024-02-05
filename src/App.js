@@ -7,9 +7,7 @@ import { router, RouterProvider } from './router';
 const App = () => {
   return (
     <div className="app">
-      {
-        (window.location.href.indexOf('logout') != -1) ? <div /> : <Navbar />
-      }
+      <Navbar />
       <RouterProvider router={router} />
     </div>
   );
