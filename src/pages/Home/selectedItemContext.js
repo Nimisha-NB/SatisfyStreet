@@ -5,11 +5,11 @@ const SelectedItemContext = createContext();
 const SelectedItemContextProvider = ({ children }) => {
   const [selectedItems, setSelectedItems] = useState([]);
 
-  //Load data from storage when component mounts
+  // Load data from storage when component mounts
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem("contextData"));
-    if (storedData.length != 0) {
-      console.log("InitialLoad");
+    const storedData = JSON.parse(localStorage.getItem('contextData'));
+    if (storedData !== null && storedData.length !== 0) {
+      console.log('InitialLoad');
       setSelectedItems(storedData);
     }
   }, []);
