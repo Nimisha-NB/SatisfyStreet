@@ -4,17 +4,19 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <div>
-      <h1 className="head">Manish Suresh's Restaurant</h1>
+      <h1 className="head">Welcome!</h1>
       <div style={{ backgroundColor: "black", display: "flex", padding: 30 }}>
         <img style={{ height: 550 }} src="./images/HomeImg.avif" alt="Pic" />
         <div>
           <Link to="/menu">
             <button
+              className="menu-item"
               style={{
                 marginTop: 225,
-                marginLeft: 50,
-                height: 50,
-                width: 125,
+                marginLeft: 150,
+                height: 75,
+                width: 200,
+                fontSize: 20,
               }}
             >
               Go To Menu
@@ -79,7 +81,7 @@ const HomePage = () => {
                 paddingTop: 10,
                 width: 380,
               }}
-              src="./images/pasta.png"
+              src="./images/pizza1.png"
               alt="alto"
             />
             <Link to="/menu">
@@ -110,7 +112,7 @@ const HomePage = () => {
                 paddingTop: 10,
                 width: 380,
               }}
-              src="./images/pasta.png"
+              src="./images/chicken1.png"
               alt="alto"
             />
             <Link to="/menu">
