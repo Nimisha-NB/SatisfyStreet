@@ -8,7 +8,6 @@ import {
 import ErrorPage from "./pages/errorPage";
 import CartPage from "./pages/Cart";
 import HomePage from "./pages/Home";
-import LogoutPage from './pages/Logout';
 import LoginPage from "./pages/Login";
 
 
@@ -29,10 +28,6 @@ const router = createBrowserRouter([
         path: '/mycart',
         element: <CartPage />
     },
-    {
-        path: '/logout',
-        element: <LogoutPage />
-    }
 ]);
 
 export {

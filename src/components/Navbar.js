@@ -34,7 +34,10 @@ const Navbar = () => {
 
         <a href='/home' className="nav-button">Home</a>
         <a href='/mycart' className="nav-button">My Cart</a>
-        <a href='/logout' className="nav-button">Logout</a>
+        <a href='#' className="nav-button" onClick={() => {
+          window.localStorage.setItem('loggedin', 'false');
+          window.location.href = '/';
+        }}>Logout</a>
       </div>
     </nav>
   );
