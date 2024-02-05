@@ -1,14 +1,21 @@
 // src/components/Navbar.js
 import React from 'react';
+import { stylize } from '../utils/stylize';
 
 const Navbar = () => {
+  stylize(`
+    a {
+      text-decoration: none;
+    }
+  `)
   return (
     <nav className="navbar">
       <div className="logo">SatisfyStreet</div>
       <div className="nav-buttons">
-        <button className="nav-button">Home</button>
-        <button className="nav-button">My Cart</button>
-        <button className="nav-button">Logout</button>
+
+        <a href='/' className="nav-button">Home</a>
+        <a href='/mycart' className="nav-button">My Cart</a>
+        <a href='/logout' className="nav-button">Logout</a>
       </div>
     </nav>
   );
