@@ -31,11 +31,11 @@ const Navbar = () => {
         <a href="/home" className="nav-button">
           Home
         </a>
-        <a href="/mycart" className="nav-button">
-          My Cart
-        </a>
         <a href="/menu" className="nav-button">
           Menu
+        </a>
+        <a href="/mycart" className="nav-button">
+          My Cart
         </a>
         <a
           href="#"
