@@ -1,5 +1,7 @@
 // src/components/Menu.js
-import React from 'react';
+import React, { useContext } from 'react';
+import SelectedItemContext from '../pages/Home/selectedItemContext';
+import { stylize } from '../utils/stylize';
 
 const Menu = ({ menuItems }) => {
   return (
@@ -14,8 +16,19 @@ const Menu = ({ menuItems }) => {
 export default Menu;
 
 const MenuItem = ({ item }) => {
+  const { selectedItems, setSelectedItems } = useContext(SelectedItemContext);
+  const selected = selectedItems.includes(item.name);
+
+  const handleClick = (e) => {
+    if (selectedItems.includes(item.name)) {
+      setSelectedItems(selectedItems.filter((e) => e !== item.name));
+    } else {
+      setSelectedItems([...selectedItems, item.name])
+    }
+  }
+
   return (
-    <div className="menu-item">
+    <div className="menu-item" style={selected ? { border: '5px solid #e91e63' } : {}} onClick={handleClick}>
       <div className="item-img">
         <img src={item.image} alt={item.name} />
       </div>
