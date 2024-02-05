@@ -8,7 +8,7 @@ const SelectedItemContextProvider = ({ children }) => {
     // Load data from storage when component mounts
     useEffect(() => {
         const storedData = JSON.parse(localStorage.getItem('contextData'));
-        if (storedData.length != 0) {
+        if (storedData !== null && storedData.length !== 0) {
             console.log('InitialLoad');
             setSelectedItems(storedData);
         }

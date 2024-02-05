@@ -36,7 +36,7 @@ export const MenuItem = ({ item }) => {
       <div className="item-details">
         <h3>{item.name}</h3>
         <p>{item.description}</p>
-        <p className="price">${item.price}</p>
+        <p className="price">₹{item.price}</p>
       </div>
     </div>
   );
